@@ -1,6 +1,8 @@
 import random
 import matplotlib.pyplot as plt
 import time
+from tensorflow.keras.datasets import boston_housing
+import numpy as np #Numpy used exclusively for preparing the training dataset
 #Dependencies
 
 class DenseLayer(): #Layer with linear connections
