@@ -168,17 +168,20 @@ start_time = time.time()
 model.train(x_train, y_train, 200, val_data=(x_test, y_test))
 print('time = ', time.time() - start_time, 's')
 
+#plotting predictions and targets
 plt.figure(figsize=(20,10))
 plt.title('Validation Predictions vs Targets')
 y_hat = [model.predict(i) for i in x_test]
 plt.plot(y_test)
 plt.plot(y_hat)
 
+#plotting predictions over targets
 plt.figure(figsize=(20,10))
 plt.title('y over y_hat')
 plt.scatter(y_test, y_hat)
 plt.plot([0.1 * i for i in range(0,11)],[0.1 * i for i in range(0,11)])
 
+#plotting validation and training loss
 plt.figure(figsize=(20,10))
 plt.title('training vs validation loss')
 plt.plot(model.errors)
